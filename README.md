@@ -60,16 +60,26 @@ Boas práticas de código
 
 /portfolio
 │── index.html
+│── landingpage.html
+│── landingpremiu.html
+│── crypto_dashboard.html
+│── mini_loja.php
 │── /css
 │   └── index.css
-|   └── style.css
+│   └── style.css
 │── /js
 │   └── script.js
+│   └── carousel.js
+│   └── navigation.js
+│   └── typewritter.js
 │── /assets
-│   ├── images
-│   └── icons
+│   ├── assets/logos/img
+│   └── eu.jpg
+│   └── landing.jpg
+│   └── landingpremium.jpg
+│   └── mini_loja.jpg
+│   └── api_dashboard.jpg
 │── README.md
-
 
 ---
 
@@ -102,4 +112,27 @@ Boas práticas de código
 
 📈 Objetivos
 
-Evoluir como Desenvolvedor
+Evoluir como Desenvolvedor Full Stack
+
+Trabalhar como freelancer em desenvolvimento web
+
+Criar aplicações úteis e escaláveis
+
+Alcançar independência financeira através da tecnologia
+
+
+
+---
+
+📬 Contato
+
+💼 GitHub: https://github.com/seu-usuario
+
+📧 Email: seu-b.jeferson.jeferson@gmail.com
+
+
+
+---
+
+⭐ Se você gostou do projeto, deixe uma estrela no repositório!
+
