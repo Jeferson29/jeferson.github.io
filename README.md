@@ -61,7 +61,8 @@ Boas práticas de código
 /portfolio
 │── index.html
 │── /css
-│   └── style.css
+│   └── index.css
+|   └── style.css
 │── /js
 │   └── script.js
 │── /assets
