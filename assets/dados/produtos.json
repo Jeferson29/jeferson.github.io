@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "Camiseta Preta",
+    "preco": 49.90,
+    "imagem": "assets/logos/img/camiseta.jpeg",
+    "descricao": "Camiseta básica preta 100% algodão."
+  },
+  {
+    "id": 2,
+    "nome": "Camisetas Varias Cores",
+    "preco": 35.00,
+    "imagem": "assets/logos/img/camisetas.jpg",
+    "descricao": "Camisetas tamanho ajustável."
+  },
+  {
+    "id": 3,
+    "nome": "Tênis",
+    "preco": 120.00,
+    "imagem": "assets/logos/img/tenis.jpg",
+    "descricao": "Tênis confortável para caminhadas."
+  }
+]
