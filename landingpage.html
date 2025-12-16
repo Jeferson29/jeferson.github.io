@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page de Vendas</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f7f7f7;
+        color: #333;
+    }
+
+    /* HERO */
+    .hero {
+        height: 100vh;
+        background: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        color: #fff;
+        text-shadow: 0 0 10px black;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        margin: 10px 0 20px;
+        color: #fff;
+        text-shadow: 0 0 5px black;
+    }
+
+    .btn {
+        background: #ff5e00;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #e44f00;
+    }
+
+    /* BENEFÍCIOS */
+    .beneficios {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .beneficios-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .beneficio-card {
+        padding: 25px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .beneficio-card h3 {
+        margin-bottom: 10px;
+    }
+
+    /* DEPOIMENTOS */
+    .depoimentos {
+        padding: 60px 20px;
+        background: #fff;
+        text-align: center;
+    }
+
+    .depoimentos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .depoimento {
+        background: #f2f2f2;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .depoimento span {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* OFERTA */
+    .oferta {
+        padding: 60px 20px;
+        background: #ffefe3;
+        text-align: center;
+    }
+
+    .preco {
+        font-size: 1.4rem;
+        margin: 15px 0;
+    }
+
+    .risco {
+        text-decoration: line-through;
+        color: #777;
+    }
+
+    .garantia {
+        font-size: 0.9rem;
+        margin-top: 10px;
+        color: #444;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #222;
+        color: #fff;
+        margin-top: 40px;
+    }
+    /* ANIMAÇÃO FADE-IN */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+     }
+
+    .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+     }
+
+     /* ANIMAÇÃO DO BOTÃO (PULSANTE) */
+     .btn-pulse {
+         animation: pulse 1.6s infinite;
+     }
+
+     @keyframes pulse {
+         0% { transform: scale(1); }
+         50% { transform: scale(1.07); }
+         100% { transform: scale(1); }
+     }
+</style>
+
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <h1>Transforme Sua Vida com Nosso Produto Exclusivo</h1>
+            <p>A solução ideal para quem quer evoluir rápido de forma prática.</p>
+            <a href="#compra" class="btn">Quero Começar Agora</a>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="beneficios fade-in">
+        <h2>Por que nosso produto funciona?</h2>
+
+        <div class="beneficios-container">
+            <div class="beneficio-card">
+                <h3>🔥 Resultados Rápidos</h3>
+                <p>Você verá mudanças reais em poucas semanas.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <h3>💡 Fácil de Usar</h3>
+                <p>Feito para qualquer pessoa aprender em minutos.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <h3>🛡 Garantia Completa</h3>
+                <p>Se não gostar, devolvemos seu dinheiro sem complicações.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos fade-in">
+        <h2>O que nossos clientes dizem</h2>
+
+        <div class="depoimentos-container">
+            <div class="depoimento">
+                <p>“Incrível! Mudou muita coisa na minha vida.”</p>
+                <span>- Lucas M.</span>
+            </div>
+
+            <div class="depoimento">
+                <p>“Simples, eficiente e vale cada centavo.”</p>
+                <span>- Ana S.</span>
+            </div>
+
+            <div class="depoimento">
+                <p>“O melhor investimento que fiz esse ano!”</p>
+                <span>- Rodrigo F.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA -->
+    <section class="oferta fade-in" id="compra">
+        <h2>Oferta Especial por Tempo Limitado</h2>
+        <p class="preco">De <span class="risco">R$ 197,00</span> por <strong>R$ 97,00</strong></p>
+
+        <a href="#" class="btn btn-pulse">Garantir Minha Vaga</a>
+        <p class="garantia">✔ Garantia de 7 dias — risco zero para você</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 • Landing Page de Vendas • Criado por Jeferson</p>
+    </footer>
+    
+    <script>
+    // Ativar fade-in ao rolar
+    const elements = document.querySelectorAll('.fade-in');
+
+    function showOnScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        elements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+
+            if (elementTop < triggerBottom) {
+                el.classList.add('show');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HyperLanding — Premium Minimalista</title>
+
+<style>
+  :root{
+    --bg: #ffffff;
+    --text: #222222;
+    --muted: #6b6b6b;
+    --gold: #d4af37;
+    --gold-soft: rgba(212,175,55,0.12);
+    --card: #f8f8f8;
+    --glass: rgba(255,255,255,0.6);
+    --radius: 12px;
+    --shadow: 0 8px 24px rgba(34,34,34,0.06);
+    --accent-shadow: 0 6px 20px rgba(212,175,55,0.12);
+    --transition: 300ms cubic-bezier(.2,.9,.3,1);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* LAYOUT */
+  header.site-header{
+    position:sticky;
+    top:0;
+    z-index:800;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+    border-bottom:1px solid rgba(0,0,0,0.04);
+  }
+  .container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:28px 20px;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    text-decoration:none;
+    color:var(--text);
+  }
+  .brand .logo{
+    width:44px;
+    height:44px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--gold), #f3d88c);
+    box-shadow: var(--accent-shadow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:700;
+    font-size:18px;
+  }
+  .brand .name{
+    font-weight:600;
+    letter-spacing:0.2px;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+  .nav-links a{
+    color:var(--muted);
+    text-decoration:none;
+    font-weight:500;
+    padding:8px 10px;
+    border-radius:8px;
+    transition:var(--transition);
+  }
+  .nav-links a:hover{ color:var(--text); background:var(--card); }
+
+  .cta{
+    background:var(--gold);
+    color:#fff;
+    padding:10px 14px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow: var(--accent-shadow);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .cta:active{ transform: translateY(1px); }
+  .cta:hover{ transform: translateY(-3px); }
+
+  /* HERO */
+  .hero{
+    padding:80px 0 60px;
+    display:grid;
+    grid-template-columns: 1fr 440px;
+    gap:40px;
+    align-items:center;
+  }
+
+  .hero-left h1{
+    font-size: clamp(28px, 4.4vw, 44px);
+    margin:0 0 16px;
+    font-weight:700;
+    letter-spacing:-0.6px;
+  }
+  .hero-left p.lead{
+    margin:0 0 26px;
+    color:var(--muted);
+    font-size:18px;
+    max-width:56ch;
+  }
+  .hero-actions{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-top:8px;
+  }
+  .btn-ghost{
+    background:transparent;
+    border:1px solid rgba(34,34,34,0.08);
+    padding:10px 14px;
+    border-radius:10px;
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600;
+  }
+
+  /* CARD PREVIEW */
+  .preview-card{
+    background: linear-gradient(180deg,#fff,#fbfbfb);
+    border:1px solid rgba(34,34,34,0.04);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .mock-browser {
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid rgba(34,34,34,0.04);
+    background: #ffffff;
+  }
+  .mock-top{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px;
+    background: transparent;
+    justify-content:flex-start;
+  }
+  .dot {
+    width:10px;height:10px;border-radius:50%;
+    background: rgba(0,0,0,0.08);
+  }
+  .mock-screen{
+    padding:18px;
+    min-height:220px;
+  }
+
+  .mock-screen h3{ margin:0 0 10px; font-size:20px; color:var(--text); }
+  .mock-screen p{ margin:0 0 16px; color:var(--muted) }
+
+  .tags{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tag{
+    font-size:12px;
+    padding:6px 8px;
+    border-radius:999px;
+    background:var(--gold-soft);
+    color: #6b5a17;
+    font-weight:600;
+  }
+
+  /* SECTIONS */
+  section.features{ padding:60px 0; border-top:1px solid rgba(0,0,0,0.03) }
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:18px;
+  }
+  .feature{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    box-shadow: 0 6px 18px rgba(34,34,34,0.04);
+  }
+  .feature h4{ margin:0 0 8px }
+  .feature p{ margin:0; color:var(--muted) }
+
+  /* TESTIMONIALS */
+  .testimonials{
+    padding:60px 0;
+  }
+  .test-grid{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:18px;
+  }
+  .test{
+    background:linear-gradient(180deg,#fff,#fafafa);
+    padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.03);
+  }
+
+  /* PRICING / CTA */
+  .offer{
+    padding:48px;
+    margin:40px 0;
+    border-radius:12px;
+    background: linear-gradient(90deg, rgba(212,175,55,0.02), rgba(0,0,0,0.02));
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    border:1px solid rgba(212,175,55,0.08);
+  }
+  .price{
+    font-size:20px;
+    color:var(--text);
+  }
+  .price small{ color:var(--muted); display:block; }
+
+  /* FOOTER */
+  footer.site-footer{
+    padding:40px 0;
+    border-top:1px solid rgba(0,0,0,0.03);
+    color:var(--muted);
+  }
+
+  /* ANIMAÇÃO */
+  .fade-up { opacity:0; transform:translateY(18px); transition: opacity .6s var(--transition), transform .6s var(--transition); }
+  .fade-up.show { opacity:1; transform:translateY(0); }
+
+  /* DASHBOARD (oculto por padrão) */
+  .dashboard-wrap{
+    position:fixed;
+    inset:0;
+    background: rgba(0,0,0,0.02);
+    display:flex;
+    z-index:1200;
+    transform: translateY(24px) scale(.99);
+    opacity:0;
+    pointer-events:none;
+    transition: var(--transition);
+  }
+  .dashboard-wrap.active{
+    transform: translateY(0) scale(1);
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .dashboard{
+    margin:auto;
+    width:95%;
+    max-width:1200px;
+    background: #fff;
+    border-radius:14px;
+    box-shadow: 0 40px 120px rgba(34,34,34,0.12);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    min-height:70vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar{
+    background: linear-gradient(180deg,#fff,#fbfbfb);
+    padding:20px;
+    border-right:1px solid rgba(0,0,0,0.04);
+  }
+  .sidebar .user{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-bottom:18px;
+  }
+  .avatar{
+    width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--gold), #f3d88c);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
+  }
+  .nav-dash{ display:flex; flex-direction:column; gap:8px }
+  .nav-dash a{
+    display:flex;gap:10px;align-items:center;padding:10px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:600;
+  }
+  .nav-dash a.active, .nav-dash a:hover{ background:var(--gold-soft); color: #523f0a; }
+
+  /* DASHBOARD MAIN */
+  .dash-main{ padding:22px; overflow:auto }
+  .dash-top{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:18px; }
+  .dash-cards{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin-bottom:18px; }
+  .dash-card{
+    background: linear-gradient(180deg,#fff,#fbfbfb);
+    border-radius:12px;padding:16px;border:1px solid rgba(0,0,0,0.04); box-shadow: 0 10px 30px rgba(34,34,34,0.04);
+  }
+  .dash-card h5{ margin:0 0 8px; font-size:14px; color:var(--muted) }
+  .dash-card strong{ font-size:20px; display:block; color:var(--text) }
+
+  .chart-wrap{ background:var(--card); padding:14px; border-radius:12px; margin-bottom:18px; }
+  .table{
+    width:100%;
+    border-collapse:collapse;
+    background:transparent;
+    border-radius:10px;
+    overflow:hidden;
+    display:block;
+  }
+  .table thead{ background:linear-gradient(90deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01)); display:table; width:100%; table-layout:fixed; }
+  .table tbody{ display:block; max-height:220px; overflow:auto; }
+  .table th, .table td{ padding:12px 14px; text-align:left; font-size:14px; color:var(--muted); border-bottom:1px solid rgba(0,0,0,0.03) }
+  .table tr{ display:table; width:100%; table-layout:fixed; }
+
+  /* RESPONSIVO */
+  @media (max-width:1000px){
+    .hero{ grid-template-columns: 1fr; padding:40px 0 30px }
+    .preview-card{ order:-1 }
+    .grid{ grid-template-columns: repeat(2,1fr) }
+    .dash-cards{ grid-template-columns: repeat(2,1fr) }
+    .dashboard{ grid-template-columns: 220px 1fr; max-width:100%; min-height:70vh }
+  }
+  @media (max-width:680px){
+    .nav-links{ display:none }
+    .hero{ padding:28px 0 }
+    .grid{ grid-template-columns: 1fr }
+    .test-grid{ grid-template-columns: 1fr }
+    .dashboard{ grid-template-columns: 1fr; }
+    .sidebar{ display:flex; gap:10px; overflow:auto; padding:12px }
+    .dash-cards{ grid-template-columns: 1fr }
+    .mock-screen{ min-height:160px }
+    .dashboard-wrap{ padding:16px }
+  }
+
+  /* Pequenas melhorias visuais */
+  .muted-small{ color:var(--muted); font-size:13px }
+  .label{ font-size:12px; color:var(--muted); font-weight:700; letter-spacing:0.6px }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <div class="logo">H</div>
+        <div class="name">HyperLanding</div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#features">Recursos</a>
+        <a href="#testimonials">Depoimentos</a>
+        <a href="#preco">Preço</a>
+      </nav>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn-ghost" href="#projects">Projetos</a>
+        <a class="cta" href="#" id="open-vip">Área VIP</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left fade-up" data-fade>
+        <h1>Transforme sua presença online com design minimalista e conversão</h1>
+        <p class="lead">Landing premium criada para comunicar com elegância. Layout focado em clareza, conversão e credibilidade — perfeito para produtos digitais e serviços de alto valor.</p>
+
+        <div class="hero-actions">
+          <a class="cta" href="#" id="btn-cta">Quero agora</a>
+          <a class="btn-ghost" href="#features">Ver recursos</a>
+        </div>
+
+        <div style="margin-top:20px" class="muted-small">Design minimalista • Tipografia refinada • Experiência premium</div>
+      </div>
+
+      <aside class="preview-card fade-up" data-fade>
+        <div class="mock-browser" aria-hidden="true">
+          <!-- top dots to suggest browser frame but subtle -->
+          <div class="mock-top" style="opacity:0.0">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="mock-screen">
+            <h3>Transforme Sua Vida com Nosso Produto Exclusivo</h3>
+            <p>Uma solução clara, simples e altamente eficaz para acelerar seus resultados.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <div>
+                <div class="tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+                <div style="margin-top:12px">
+                  <a class="btn-ghost" href="#">Ver Demo</a>
+                </div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-weight:700;color:var(--text)">R$ 97,00</div>
+                <div class="muted-small">Oferta limitada</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;justify-content:space-between">
+          <div style="color:var(--muted); font-size:13px">Projeto: <strong>HyperLanding</strong></div>
+          <div style="display:flex;gap:8px">
+            <a class="btn-ghost" href="#" id="preview-open">Abrir</a>
+            <a class="cta" href="#" id="preview-cta">Usar modelo</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features fade-up" data-fade>
+      <div class="container" style="padding:0">
+        <h2 style="margin-bottom:18px">Recursos principais</h2>
+        <div class="grid">
+          <div class="feature">
+            <h4>Design minimalista</h4>
+            <p>Espaçamento, tipografia e hierarquia claros que destacam sua mensagem.</p>
+          </div>
+          <div class="feature">
+            <h4>Alta conversão</h4>
+            <p>CTAs estrategicamente posicionados e layout otimizado para ação.</p>
+          </div>
+          <div class="feature">
+            <h4>Responsivo</h4>
+            <p>Perfeito em mobile, tablet e desktop, com interações suaves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials fade-up" data-fade>
+      <div class="container" style="padding:0">
+        <h2 style="margin-bottom:18px">Depoimentos</h2>
+        <div class="test-grid">
+          <div class="test">
+            <p>“A HyperLanding aumentou nossa taxa de conversão em 38% — design e copy excelentes.”</p>
+            <div style="margin-top:10px;font-weight:700">— Mariana R.</div>
+          </div>
+          <div class="test">
+            <p>“Limpeza visual e confiança gerada no usuário. Recomendo para qualquer produto digital.”</p>
+            <div style="margin-top:10px;font-weight:700">— André S.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section id="preco" class="fade-up" data-fade>
+      <div class="offer">
+        <div>
+          <div class="label">Oferta especial</div>
+          <div class="price"><small>De R$ 197,00</small><div style="font-size:22px;font-weight:800">Por R$ 97,00</div></div>
+          <div class="muted-small" style="margin-top:8px">Pagamento seguro • Entrega digital imediata</div>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center">
+          <a class="cta" href="#" id="open-vip-2">Garanta agora</a>
+          <a class="btn-ghost" href="#testimonials">Ver depoimentos</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer container" role="contentinfo">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>HyperLanding</strong> • Minimalista Premium • 2025</div>
+        <div class="muted-small">Feito por <strong>Jeferson</strong></div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- DASHBOARD POP-UP -->
+  <div class="dashboard-wrap" id="dashboardWrap" aria-hidden="true">
+    <div class="dashboard" role="dialog" aria-modal="true" aria-label="Painel administrativo">
+      <aside class="sidebar">
+        <div class="user">
+          <div class="avatar">J</div>
+          <div>
+            <div style="font-weight:700">Jeferson</div>
+            <div class="muted-small">Administrador</div>
+          </div>
+        </div>
+
+        <nav class="nav-dash" id="dashNav">
+          <a href="#" class="active" data-target="overview">Visão Geral</a>
+          <a href="#" data-target="sales">Vendas</a>
+          <a href="#" data-target="messages">Mensagens</a>
+          <a href="#" data-target="settings">Configurações</a>
+          <a href="#" id="closeDash" style="margin-top:12px;color:#b33">Sair</a>
+        </nav>
+      </aside>
+
+      <main class="dash-main">
+        <div class="dash-top">
+          <div>
+            <div style="font-size:13px;color:var(--muted)">Bem-vindo de volta,</div>
+            <div style="font-weight:800;font-size:20px">Jeferson — Painel</div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="muted-small">Saldo</div>
+            <div style="background:var(--gold);padding:8px 12px;border-radius:10px;color:white;font-weight:700">R$ 3.240</div>
+          </div>
+        </div>
+
+        <div class="dash-cards">
+          <div class="dash-card">
+            <h5>Visitas (7d)</h5>
+            <strong id="visitsCount">3.482</strong>
+            <div class="muted-small">+12% vs semana anterior</div>
+          </div>
+
+          <div class="dash-card">
+            <h5>Conversões</h5>
+            <strong id="convCount">128</strong>
+            <div class="muted-small">Taxa: 3.7%</div>
+          </div>
+
+          <div class="dash-card">
+            <h5>Receita (mês)</h5>
+            <strong>R$ 7.120</strong>
+            <div class="muted-small">Meta: R$ 12.000</div>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div style="font-weight:700">Tráfego diário</div>
+            <div class="muted-small">Últimos 14 dias</div>
+          </div>
+          <canvas id="trafficChart" style="width:100%;height:160px;display:block"></canvas>
+        </div>
+
+        <div style="display:flex;gap:18px;flex-direction:column">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+              <div style="font-weight:700">Últimas vendas</div>
+              <div class="muted-small">Atualizadas agora</div>
+            </div>
+
+            <div class="table" role="table" aria-label="Últimas vendas">
+              <thead>
+                <tr><th>Cliente</th><th>Plano</th><th>Valor</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mariana</td><td>Premium</td><td>R$ 197</td><td>Pago</td></tr>
+                <tr><td>Lucas</td><td>Starter</td><td>R$ 97</td><td>Pago</td></tr>
+                <tr><td>Ana</td><td>Premium</td><td>R$ 197</td><td>Chargeback</td></tr>
+                <tr><td>Pedro</td><td>Starter</td><td>R$ 97</td><td>Pago</td></tr>
+                <tr><td>Ingrid</td><td>Premium</td><td>R$ 197</td><td>Pago</td></tr>
+              </tbody>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px">
+              <div style="font-weight:700;margin-bottom:8px">Mensagens recentes</div>
+              <div style="background:var(--card);padding:12px;border-radius:10px">
+                <div style="font-weight:700">Carlos</div>
+                <div class="muted-small">“Quero saber mais sobre o curso — contato urgente”</div>
+              </div>
+            </div>
+            <div style="width:260px;min-width:200px">
+              <div style="font-weight:700;margin-bottom:8px">Ações rápidas</div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <button class="cta" id="btnNewPromo">Criar promoção</button>
+                <button class="btn-ghost" id="btnExport">Exportar CSV</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Fade-in simples
+    const fades = document.querySelectorAll('[data-fade]');
+    function showFades(){
+      fades.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight * 0.85) el.classList.add('show');
+      });
+    }
+    window.addEventListener('load', showFades);
+    window.addEventListener('scroll', showFades);
+
+    // Abrir dashboard (mock auth)
+    const dashboardWrap = document.getElementById('dashboardWrap');
+    const openVipBtns = [document.getElementById('open-vip'), document.getElementById('open-vip-2'), document.getElementById('btn-cta')];
+    openVipBtns.forEach(btn=>{
+      if(!btn) return;
+      btn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        // Modal: pedir email (simples prompt)
+        const proceed = confirm('Entrar na área VIP do projeto (visualização do dashboard)?');
+        if(proceed){
+          dashboardWrap.classList.add('active');
+          dashboardWrap.setAttribute('aria-hidden','false');
+        }
+      });
+    });
+
+    document.getElementById('closeDash').addEventListener('click', (e)=>{
+      e.preventDefault();
+      dashboardWrap.classList.remove('active');
+      dashboardWrap.setAttribute('aria-hidden','true');
+    });
+
+    // Nav dashboard links (trocar ativo)
+    document.querySelectorAll('.nav-dash a[data-target]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        document.querySelectorAll('.nav-dash a').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+        // aqui você poderia trocar o conteúdo principal via JS
+      });
+    });
+
+    // Simples gráfico em canvas (linhas)
+    (function(){
+      const canvas = document.getElementById('trafficChart');
+      const ctx = canvas.getContext('2d');
+      // Definir tamanho para alta DPI
+      function resize(){
+        const ratio = window.devicePixelRatio || 1;
+        canvas.width = canvas.clientWidth * ratio;
+        canvas.height = canvas.clientHeight * ratio;
+        ctx.setTransform(ratio,0,0,ratio,0,0);
+        draw();
+      }
+
+      const data = [120,160,180,140,200,220,210,250,230,260,300,280,320,340];
+      function draw(){
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+        ctx.clearRect(0,0,w,h);
+
+        // background grid
+        ctx.strokeStyle = 'rgba(0,0,0,0.03)';
+        ctx.lineWidth = 1;
+        for(let i=0;i<4;i++){
+          let y = h/4*i;
+          ctx.beginPath();
+          ctx.moveTo(0,y);
+          ctx.lineTo(w,y);
+          ctx.stroke();
+        }
+
+        // compute max
+        const max = Math.max(...data) * 1.08;
+        const stepX = w / (data.length - 1);
+        // draw line
+        ctx.beginPath();
+        ctx.strokeStyle = '#d4af37';
+        ctx.lineWidth = 2.4;
+        ctx.lineJoin = ctx.lineCap = 'round';
+        data.forEach((v,i)=>{
+          const x = i * stepX;
+          const y = h - (v / max) * h;
+          if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        });
+        ctx.stroke();
+
+        // fill gradient
+        const grad = ctx.createLinearGradient(0,0,0,h);
+        grad.addColorStop(0, 'rgba(212,175,55,0.16)');
+        grad.addColorStop(1, 'rgba(212,175,55,0.02)');
+        ctx.lineTo(w, h);
+        ctx.lineTo(0, h);
+        ctx.closePath();
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // points
+        data.forEach((v,i)=>{
+          const x = i * stepX;
+          const y = h - (v / max) * h;
+          ctx.beginPath();
+          ctx.fillStyle = '#fff';
+          ctx.strokeStyle = '#d4af37';
+          ctx.lineWidth = 2;
+          ctx.arc(x,y,4,0,Math.PI*2);
+          ctx.fill();
+          ctx.stroke();
+        });
+      }
+
+      window.addEventListener('resize', resize);
+      // initial
+      setTimeout(resize, 50);
+    })();
+
+    // Export CSV (gera CSV de vendas exibidas)
+    document.getElementById('btnExport').addEventListener('click', ()=>{
+      const rows = [
+        ['Cliente','Plano','Valor','Status'],
+        ['Mariana','Premium','197','Pago'],
+        ['Lucas','Starter','97','Pago'],
+        ['Ana','Premium','197','Chargeback'],
+        ['Pedro','Starter','97','Pago'],
+        ['Ingrid','Premium','197','Pago']
+      ];
+      const csv = rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'vendas.csv';
+      a.click();
+      URL.revokeObjectURL(url);
+      alert('CSV gerado.');
+    });
+
+    // Pequeno efeito de preview open
+    document.getElementById('preview-open').addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert('Preview do projeto — no portfólio real você pode abrir a página completa.');
+    });
+
+    // CTA preview-cta: abre dashboard also
+    document.getElementById('preview-cta').addEventListener('click', (e)=>{
+      e.preventDefault();
+      document.getElementById('open-vip').click();
+    });
+
+    // Botão criar promoção (exemplo de interação)
+    document.getElementById('btnNewPromo').addEventListener('click', ()=>{
+      const ok = confirm('Criar promoção “-10%” para Starter?');
+      if(ok) alert('Promoção criada (simulada).');
+    });
+
+    // Pequena contagem animada
+    function animateCount(id, to){
+      const el = document.getElementById(id);
+      if(!el) return;
+      let start = 0;
+      const step = Math.ceil(to/40);
+      const iv = setInterval(()=>{
+        start += step;
+        if(start >= to){ start = to; clearInterval(iv); }
+        el.textContent = start.toLocaleString('pt-BR');
+      }, 18);
+    }
+    animateCount('visitsCount', 3482);
+    animateCount('convCount', 128);
+  </script>
+</body>
+</html>
