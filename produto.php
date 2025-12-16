@@ -1,6 +1,6 @@
 <?php
 $id = $_GET['id'];
-$produtos = json_decode(file_get_contents("assets/dados/produtos.json"), true);
+$produtos = json_decode(file_get_contents("dados/produtos.json"), true);
 
 foreach ($produtos as $p) {
     if ($p['id'] == $id) {
@@ -18,7 +18,7 @@ session_start();
     <title><?= $produto['nome'] ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mini Loja</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
      form button {
       background: #008cff;
