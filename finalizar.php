@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$produtos = json_decode(file_get_contents("assets/dados/produtos.json"), true);
+$produtos = json_decode(file_get_contents("dados/produtos.json"), true);
 $pedidos = [];
 
-if (file_exists("assets/dados/pedidos.json")) {
+if (file_exists("dados/pedidos.json")) {
     $pedidos = json_decode(file_get_contents("dados/pedidos.json"), true);
 }
 
@@ -38,7 +38,7 @@ $_SESSION['carrinho'] = [];
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mini Loja</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="css/style.css">
 <head>
 <body>
    
