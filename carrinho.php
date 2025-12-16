@@ -18,7 +18,7 @@ $produtos = json_decode(file_get_contents("assets/dados/produtos.json"), true);
     <title>Carrinho</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mini Loja</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
      .btn {
       text-decoration: none;
@@ -39,7 +39,7 @@ $produtos = json_decode(file_get_contents("assets/dados/produtos.json"), true);
     <div class="logo">Mini Loja</div>
 
     <nav class="menu">
-        <a href="index.php">Home</a>
+        <a href="mini_loja.php">Home</a>
         <a href="carrinho.php">Carrinho</a>
         <a href="admin.php">Admin</a>
     </nav>
