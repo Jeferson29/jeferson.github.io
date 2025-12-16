@@ -1,5 +1,5 @@
 <?php
-$produtos = json_decode(file_get_contents("assets/dados/produtos.json"), true);
+$produtos = json_decode(file_get_contents("dados/produtos.json"), true);
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,7 @@ $produtos = json_decode(file_get_contents("assets/dados/produtos.json"), true);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mini Loja</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
