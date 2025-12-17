@@ -422,7 +422,7 @@ color: #DDD;
 line-height: 1.4em;
 }
 /* PROJETOS */
-.projects-container {
+.projects-cointainer {
 text-align: center;
 padding: 30px 15px;
 width: 90%;
@@ -560,7 +560,7 @@ text-transform: uppercase;
 }
 .contact-form input,
 .contact-form textarea {
-width: 95%;
+width: 90%;
 padding: 12px;
 border: 1px solid rgba(0,255,255,0.3);
 border-radius: 8px;
