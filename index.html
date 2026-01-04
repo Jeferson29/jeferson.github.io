@@ -1,329 +1,420 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Portfolio - Jeferson Barbosa dos Santos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#00F3FF">
-  <meta name="description" content="Portfólio de Jeferson Barbosa dos Santos, desenvolvedor Full Stack especializado em Front-end e Back-end.">
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>Portfolio - Jeferson Barbosa dos Santos</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <meta name="theme-color" content="#00F3FF">  
+  <meta name="description" content="Portfólio de Jeferson Barbosa dos Santos, desenvolvedor Full Stack especializado em Front-end e Back-end.">  
+  <meta name="author" content="Jeferson Barbosa dos Santos">  
+  <meta name="robots" content="index, follow">    
+  <link rel="stylesheet" href="assets/styles/port.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">  
+</head>  
+<body>    
 
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-</head>
-
-<body>
-
-  <!-- MENU LATERAL -->
-  <nav id="mySidenav">
-    <a href="#" role="button" tabindex="0" id="nav-about" onclick="openSection('about')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('about')">
-      <span class="icon">👤</span>
-      <span class="tip">Sobre</span>
-    </a>
-
-    <a href="#" role="button" tabindex="0" id="nav-skills" onclick="openSection('skills')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('skills')">
-      <span class="icon">⚙️</span>
-      <span class="tip">Habilidades</span>
-    </a>
-    <a href="#" role="button" tabindex="0" id="nav-projects" onclick="openSection('projects')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('projects')">
-      <span class="icon">📁</span>
-      <span class="tip">Projetos</span>
-    </a>
-
-    <a href="#" role="button" tabindex="0" id="nav-contact" onclick="openSection('contact')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('contact')">
-      <span class="icon">✉️</span>
-      <span class="tip">Contato</span>
-    </a>
+ <!-- MENU LATERAL -->    
+ <nav id="mySidenav">  
  
-  </nav>
+    <a href="#about" role="button" tabindex="0" id="nav-about" onclick="openSection('about')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('about')">  
+   <span class="icon">👤</span>  
+   <span class="tip">Sobre</span>  
+    </a>  
+    <a href="#skills" role="button" tabindex="0" id="nav-skills" onclick="openSection('skills')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('skills')">  
+  <span class="icon">⚙️</span>  
+  <span class="tip">Habilidades</span>
+    </a>  
+    <a href="#projects" role="button" tabindex="0" id="nav-projects" onclick="openSection('projects')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('projects')">  
+  <span class="icon">📁</span>  
+  <span class="tip">Projetos</span>  
+    </a>  
+    <a href="#contact" role="button" tabindex="0" id="nav-contact" onclick="openSection('contact')"onkeydown="if(event.key === 'Enter' || event.key === ' ') openSection('contact')">  
+  <span class="icon">✉️</span>  
+  <span class="tip">Contato</span>  
+    </a>
 
-  <!-- BOTÃO HOME -->
-  <div id="btnHome" onclick="goHome()" aria-label="Voltar para o início" role="button">&#8962</div>
-
-  <!-- HEADER -->
-  <header>
-    <div id="headerContent">
-      <h1 id="titleTyped">
-       <span id="typedText"></span>
-       <span class="typewriter-cursor"></span>
-      </h1>
-      <p>Desenvolvedor Full Stack</p>
-      <span>front-end <span class="dec">&</span> back-end</span>
-      
-      <div id="techTicker">
-       <div class="tech-track">
-        <span><i class="devicon-html5-plain colored"></i> HTML</span>
-        <span><i class="devicon-css3-plain colored"></i> CSS</span>
-        <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-        <span><i class="devicon-jquery-plain colored"></i> jQuery</span>
-        <span><i class="devicon-bootstrap-plain colored"></i> Bootstrap</span>
-        <span><i class="devicon-php-plain colored"></i> PHP</span>
-        <span><i class="devicon-mysql-plain colored"></i> MySQL</span>
-        <span><i class="devicon-less-plain-wordmark colored"></i> Less</span>
-        <span><i class="devicon-java-plain colored"></i> Java</span>
-      </div>
-      </div>
-      
+  </nav>    
+  
+  <!-- BOTÃO HOME -->    
+  <div id="btnHome" onclick="goHome()" aria-label="Voltar para o início" role="button">&#8962;
+  </div>   
+  
+  <!-- HEADER -->    
+  <header>  
+  
+    <div id="headerContent">  
+      <div class="lines"></div>
+      <h1 class="hero-animate">Bem-vindo ao meu portfólio</h1>
+<p class="hero-animate">Front-end <span class="dec">&</span> Back-end</p>
+<span class="hero-animate hero-role">Web Developer</span>
     </div>
-  </header>
 
-  <div id="contentWrapper">
+  </header>    
+  
+   <div id="contentWrapper"> 
+   <!-- SOBRE MIM -->  
+  <section id="about" class="section" aria-labelledby="about-title">  
 
-    <!-- SOBRE MIM -->
-    <section id="about" class="section" aria-labelledby="about-title">
+    <div class="about-grid">  
+    <div class="about-main" role="region" aria-label="Sobre Jeferson">  
+      
+      <img src="assets/logos/img/eu.jpg" alt="Foto de Jeferson" class="about-avatar" loading="lazy">  
 
-      <div class="about-grid">
+    <div class="about-main-text">  
+        <h2 id="about-title">Sobre mim</h2>  
 
-        <div class="about-main" role="region" aria-label="Sobre Jeferson">
-          <img src="assets/logos/img/eu.jpg" alt="Foto de Jeferson" class="about-avatar" loading="lazy">
+        <p class="about-desc">  
+          Olá, meu nome é <strong>Jeferson Barbosa dos Santos</strong>. Sou <em>desenvolvedor web</em> com foco em  
+        <strong>Front-end</strong> e <strong>Back-end</strong>, dedicado a criar interfaces modernas, funcionais e responsivas, além de aplicações eficientes.  
+          Tenho experiência com tecnologias como <strong>HTML, CSS, JavaScript, jQuery, Bootstrap, PHP</strong> e continuo me aprimorando para acompanhar as melhores práticas do mercado.  
+        </p>  
+          
+        <p class="about-highlight">  
+         Criando soluções modernas, performáticas e focadas em experiência do usuário.  
+        </p>  
 
-          <div class="about-main-text">
-            <h2 id="about-title">Sobre mim</h2>
+    <div class="about-actions">  
+        <a nref="#projects" class="about-cta" onclick="openSection('projects')"> Ver projetos →
+        </button>  
+        <a class="cv-btn" href="files/CV-Jeferson.pdf" download>Baixar CV
+        </a>  
+    </div>  
+    </div>  
+    
+    </div>  
+    
+    <aside class="about-side" role="complementary" aria-label="Informações rápidas">  
+    <div class="info-cards">  
+    <div class="info-card"><strong>📍 Local</strong><span>Brasil</span>
+    </div>  
+    <div class="info-card"><strong>💼 Freelancer</strong><span>Disponível</span>
+    </div>  
+    <div class="info-card"><strong>⚙️ Foco</strong><span>Full Stack / Web</span>
+    </div>  
+    <div class="info-card"><strong>📚 Estudando</strong><span>JS, PHP, MySQL</span>
+    </div>  
+    </div>  
+    </aside>  
 
-            <p class="about-desc">
-              Olá, meu nome é <strong>Jeferson Barbosa dos Santos</strong>. Sou <em>desenvolvedor web</em> com foco em
-              <strong>Front-end</strong> e <strong>Back-end</strong>, dedicado a criar interfaces modernas, funcionais e responsivas, além de aplicações eficientes.
-              Tenho experiência com tecnologias como <strong>HTML, CSS, JavaScript, jQuery, Bootstrap, PHP</strong> e continuo me aprimorando para acompanhar as melhores práticas do mercado.
-            </p>
-            
-            <p class="about-highlight">
-             Criando soluções modernas, performáticas e focadas em experiência do usuário.
-            </p>
+    </div>  
+    
+  </section>  
 
-            <div class="about-actions">
-              <button class="about-cta"> Ver projetos →
-</button>
-              <a class="cv-btn" href="files/CV-Jeferson.pdf" download>Baixar CV</a>
-            </div>
-          </div>
-        </div>
+  <!-- HABILIDADES -->  
+  <section id="skills" class="section"> 
+  
+   <div class="skills-container">  
 
-        <aside class="about-side" role="complementary" aria-label="Informações rápidas">
-          <div class="info-cards">
-            <div class="info-card"><strong>📍 Local</strong><span>Brasil</span></div>
-            <div class="info-card"><strong>💼 Freelancer</strong><span>Disponível</span></div>
-            <div class="info-card"><strong>⚙️ Foco</strong><span>Full Stack / Web</span></div>
-            <div class="info-card"><strong>📚 Estudando</strong><span>JS, PHP, MySQL</span></div>
-          </div>
-        </aside>
+        <h2 class="skills-title">Habilidades</h2>  
+        <p class="desc">
 
-      </div>
-    </section>
-
-    <!-- HABILIDADES -->
-    <section id="skills" class="section">
-     <div class="skills-container">
-
-      <h2 class="skills-title">Habilidades</h2>
-      <p class="desc">
-  Tecnologias que utilizo para criar interfaces modernas, responsivas e aplicações eficientes.
+Tecnologias que utilizo para criar interfaces modernas, responsivas e aplicações eficientes.
         </p>
 
-        <div class="skills-grid">
-          <h3 class="skills-group">Front-end</h3>
-          <div class="skill-card">
-            <i class="devicon-html5-plain colored icon-tech"></i>
-            <h3>HTML5</h3>
-            <p>Estrutura semântica, acessibilidade e SEO.</p>
-          </div>
-
-          <div class="skill-card">
-            <i class="devicon-css3-plain colored icon-tech"></i>
-            <h3>CSS3</h3>
-            <p>Interfaces responsivas, animações, Flexbox e Grid.</p>
-          </div>
-
-          <div class="skill-card">
-            <i class="devicon-javascript-plain colored icon-tech"></i>
-            <h3>JavaScript</h3>
-            <p>Lógica, DOM, APIs e interatividade.</p>
-          </div>
-          
-          <div class="skill-card">
-            <i class="devicon-bootstrap-plain colored icon-tech"></i>
-            <h3>Bootstrap</h3>
-            <p>Criação rápida de layouts modernos usando componentes prontos.</p>
-          </div>
-
-          <div class="skill-card">
-            <i class="devicon-less-plain-wordmark colored icon-tech"></i>
-            <h3>Less</h3>
-            <p>Pré-processador para organizar CSS com variáveis e mixins.</p>
-          </div>
-          
-          <div class="skill-card">
-            <i class="devicon-jquery-plain colored icon-tech"></i>
-            <h3>jQuery</h3>
-            <p>Manipulação do DOM, animações e interações rápidas.</p>
-          </div>
-
-          
-          <h3 class="skills-group">Back-end</h3>
-          
-          <div class="skill-card">
-            <i class="devicon-php-plain colored icon-tech"></i>
-            <h3>PHP</h3>
-            <p>CRUD, autenticação e rotas simples.</p>
-          </div>
-
-          <div class="skill-card">
-            <i class="devicon-mysql-plain colored icon-tech"></i>
-            <h3>MySQL</h3>
-            <p>Modelagem, tabelas relacionais e queries avançadas.</p>
-          </div>
-
-          <div class="skill-card">
-            <i class="devicon-java-plain colored icon-tech"></i>
-            <h3>Java</h3>
-            <p>Programação orientada a objetos e desenvolvimento estruturado.</p>
-            </div>
-          </div>
-
-        </div>
-     </div>
-    </section>
-
-    <!-- PROJETOS -->
-    <section id="projects" class="section">
-      <h2>Projetos</h2>
-      <p class="desc">Uma coleção dos meus projetos mais importantes.</p>
+    <div class="skills-grid">  
+    <div class="skills-column fade-left">
+      <h3 class="skills-group divider">front-end
+      </h3> 
       
-      <div class="projects-container">
-
-       <p class="projects-sub">Arraste para o lado para ver mais ➜</p>
-
-      <div class="projects-carousel">
-      <div class="project-card">
-       <img src="assets/logos/img/landing.jpg" alt="HyperLading Project Preview" class="project-img" loading="lazy" />
-       <h3>HyperLanding</h3>
-       <p>Uma landing page moderna, responsiva e com animações suaves, criada para demonstrar domínio em <strong>HTML, CSS</strong> e <strong>JavaScript</strong>.</p>
-      <div class="project-tags">
-       <span>HTML</span>
-       <span>CSS</span>
-       <span>JavaScript</span>
-      </div>
-      <div class="project-btns">
-       <a href="landingpage.html" target="_blank">Ver Projeto</a>
-      </div>
-      </div>
-      
-      <div class="project-card">
-      
-       <img src="assets/logos/img/landingpremium.jpg" class="project-img" alt="Landing Page Premium + Dashboard" loading="lazy" />
-       <h3>Landing Page Premium + Dashboard</h3>
-       <p>Projeto minimalista elegante com página premium e dashboard interno profissional.</p>
-      <div class="project-tags">
-       <span class="tech">HTML</span>
-       <span class="tech">CSS</span>
-       <span class="tech">JavaScript</span>
-        </div>
-      <div class="project-btns">
-       <a href="landingpremium.html" target="_blank">Ver Projeto</a>
-      </div>
-      </div>
-      
-      <div class="project-card">
-       <img src="assets/logos/img/mini_loja.jpg" class="project-img" loading="lazy" />
-       <h3>Mini loja</h3>
-       <p>Mini loja criada com <strong>HTML, CSS, JavaScript e PHP</strong>, contendo sistema de carrinho com cálculos automáticos de itens, preços e total.
-       </p>
-      <div class="project-tags">
-        <span class="tech">HTML</span>
-        <span class="tech">CSS</span>
-        <span class="tech">JS</span>
-        <span class="tech">PHP</span>
-      </div>
-      <div class="project-btns">
-       <a href="mini_loja.php" target="_blank">Ver Projeto</a>
-      </div>
-      </div>
-      
-      <div class="project-card">
-       <img src="assets/logos/img/api_dashboard.jpg" alt="Dashboard de Criptomoedas" class="project-img" loading="lazy" />
-       <h3>Crypto Dashboard</h3>
-       <p><strong>Dashboard</strong> interativo que consome uma API de criptomoedas em tempo real, mostrando preços, gráficos e variação das principais moedas.</p>
-      <div class="project-tags">
-       <span>HTML</span>
-       <span>CSS</span>
-       <span>JavaScript</span>
-       <span>API</span>
-       <span>AJAX</span>
-      </div>
-      <div class="project-btns">
-       <a href="crypto_dashboard.html" target="_blank">Ver Projeto</a>
-      </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contact" class="section">
-      <div class="contact-wrapper">
-
-        <h2>Contato</h2>
-        <p class="desc">Entre em contato comigo para oportunidades ou parcerias.</p>
-
-        <div class="contact-container">
-
-          <div class="contact-box">
-            <h3>Fale comigo</h3>
-
-            <div class="contact-item email">
-              <a href="mailto:b.jeferson.jeferson.com" class="contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Email</span>
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <a href="https://wa.me/5547991383291" target="_blank" class="contact-item whatsapp">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <a href="https://linkedin.com/in/seu_usuario" target="_blank" class="contact-item linkedin">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>LinkedIn</span>
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <a href="https://github.com/seu_usuario" target="_blank" class="contact-item github">
-                <i class="fa-brands fa-github"></i>
-                <span>GitHub</span>
-              </a>
-            </div>
-          </div>
-
-          <form class="contact-form">
-            <h3>Envie uma mensagem</h3>
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu email" required>
-            <textarea placeholder="Sua mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-          </form>
-
-        </div>
-
-        <footer class="footer">
-         <div class="footer-socials">
-          <a href="mailto:b.jeferson.jeferson@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://wa.me/5547991383291" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://linkedin.com/in/seu_usuario" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/seuusuriog" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <div class="skill-card">  
+        <i class="devicon-html5-plain colored icon-tech"></i>  
+        <h3>HTML5</h3>  
+        <p>Estrutura semântica, acessibilidade e SEO.</p>  
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 95%;">
+          <span>95%</span>
          </div>
-       
-        <p>© 2025 Jeferson Barbosa dos Santos — Todos os direitos reservados.</p>
-        </footer>
-
-      </div>
-    </section>
+        </div>
         
+    </div>  
+    <div class="skill-card">  
+        <i class="devicon-css3-plain colored icon-tech"></i>  
+        <h3>CSS3</h3>  
+        <p>Interfaces responsivas, animações, Flexbox e Grid.</p>  
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 75%;">
+          <span>75%</span>
+         </div>
+        </div>
+    </div>  
+    <div class="skill-card">  
+        <i class="devicon-javascript-plain colored icon-tech"></i>  
+        <h3>JavaScript</h3>  
+        <p>Lógica, DOM, APIs e interatividade.</p>  
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 65%;">
+          <span>65%</span>
+         </div>
+        </div>
+    </div>  
+    <div class="skill-card">  
+        <i class="devicon-bootstrap-plain colored icon-tech"></i>  
+        <h3>Bootstrap</h3>  
+        <p>Criação rápida de layouts modernos usando componentes prontos.</p>  
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 80%;">
+          <span>80%</span>
+         </div>
+        </div>
+    </div>  
+    <div class="skill-card">  
+        <i class="devicon-less-plain-wordmark colored icon-tech"></i>  
+        <h3>Less</h3>  
+        <p>Pré-processador para organizar CSS com variáveis e mixins.
+        </p> 
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 75%;">
+          <span>75%</span>
+         </div>
+        </div>
+    </div>  
+    <div class="skill-card">  
+        <i class="devicon-jquery-plain colored icon-tech"></i>  
+        <h3>jQuery</h3>  
+        <p>Manipulação do DOM, animações e interações rápidas.</p> 
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 70%;">
+          <span>70%</span>
+         </div>
+        </div> 
+    </div>  
+    </div>
+
+    <div class="skills-column fade-right">
+        <h3 class="skills-group divider">Back-end
+        </h3>  
+        
+    <div class="skill-card">  
+        <i class="devicon-php-plain colored icon-tech"></i>  
+        <h3>PHP</h3>  
+        <p>CRUD, autenticação e rotas simples.</p>  
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 78%;">
+          <span>78%</span>
+         </div>
+        </div>
+    </div>  
+    <div class="skill-card">  
+        <i class="devicon-mysql-plain colored icon-tech"></i>  
+        <h3>MySQL</h3>  
+        <p>Modelagem, tabelas relacionais e queries avançadas.</p>
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 80%;">
+          <span>80%</span>
+         </div>
+        </div> 
+    </div>  
+    <div class="skill-card">  
+        <i class="devicon-java-plain colored icon-tech"></i>  
+        <h3>Java</h3>  
+        <p>Programação orientada a objetos e desenvolvimento estruturado.</p>  
+        <div class="skill-bar">
+         <div class="skill-progress" style="--level: 70%;">
+          <span>70%</span>
+         </div>
+        </div>
+    </div>  
+    </div>  
+    
+    </div>
+
+    </div>  
+     
+  </section>  
+
+  <!-- PROJETOS -->  
+  <section id="projects" class="section">  
+        <h2>Projetos</h2>  
+        <p class="desc">Uma coleção dos meus projetos mais importantes.</p>  
+    
+    <div class="projects-container">  
+
+        <p class="projects-sub">Arraste para o lado para ver mais ➜
+        </p>  
+    <div class="projects-carousel">  
+    <div class="project-card">  
+        <img src="assets/logos/img/landing.jpg" alt="HyperLading Project Preview" class="project-img" loading="lazy" />  
+      <div class="project-content">
+        <h3>HyperLanding</h3>  
+        <p>Uma landing page moderna, responsiva e com animações suaves, criada para demonstrar domínio em <strong>HTML, CSS</strong> e <strong>JavaScript</strong>.
+        </p>  
+    <div class="project-tags">  
+        <span>HTML</span>  
+        <span>CSS</span>  
+        <span>JavaScript</span>  
+    </div>  
+    <div class="project-btns">  
+        <a href="landingpage.html" target="_blank">Ver Projeto</a>  
+    </div>  
+    </div>
+    </div>  
+    
+    <div class="project-card">  
+        <img src="assets/logos/img/landingpremium.jpg" class="project-img" alt="Landing Page Premium + Dashboard" loading="lazy" />  
+       <div class="project-content">
+        <h3>Landing Page Premium + Dashboard
+        </h3>  
+        <p>Projeto minimalista elegante com página premium e dashboard interno profissional.
+        </p>  
+    <div class="project-tags">  
+        <span class="tech">HTML</span>  
+        <span class="tech">CSS</span>  
+        <span class="tech">JavaScript</span>  
+    </div>  
+    <div class="project-btns">  
+        <a href="landingpremium.html" target="_blank">Ver Projeto</a>  
+    </div>  
+    </div>
+    </div>  
+    
+    <div class="project-card">  
+        <img src="assets/logos/img/mini_loja.jpg" class="project-img" loading="lazy" /> 
+       <div class="project-content">
+        <h3>Mini loja</h3>  
+        <p>Mini loja criada com <strong>HTML, CSS, JavaScript e PHP</strong>, contendo sistema de carrinho com cálculos automáticos de itens, preços e total.  
+        </p>  
+    <div class="project-tags">  
+        <span class="tech">HTML</span>  
+        <span class="tech">CSS</span>  
+        <span class="tech">JS</span>  
+        <span class="tech">PHP</span>  
+    </div>  
+    <div class="project-btns">  
+        <a href="index1.php" target="_blank">Ver Projeto</a>  
+    </div>  
+    </div>
+    </div>  
+    
+    <div class="project-card">  
+        <img src="assets/logos/img/api_dashboard.jpg" alt="Dashboard de Criptomoedas" class="project-img" loading="lazy" /> 
+       <div class="project-content">
+        <h3>Crypto Dashboard</h3>  
+        <p><strong>Dashboard</strong> interativo que consome uma API de criptomoedas em tempo real, mostrando preços, gráficos e variação das principais moedas.
+        </p>  
+    <div class="project-tags">  
+        <span>HTML</span>  
+        <span>CSS</span>  
+        <span>JavaScript</span>  
+        <span>API</span>  
+        <span>AJAX</span>  
+    </div>  
+    <div class="project-btns">  
+        <a href="crypto_dashboard.html" target="_blank">Ver Projeto</a>  
+    </div>  
+    </div>
+    </div>  
+    
+    </div>
+    </div>
+  </section>  
+
+  <!-- CONTATO -->  
+  <section id="contact" class="section">  
+  <div class="contact-wrapper">  
+
+    <h2>Contato</h2>  
+    <p class="desc">Entre em contato comigo para oportunidades ou parcerias.</p>  
+
+    <div class="contact-container">  
+
+      <div class="contact-box">  
+        <h3>Fale comigo</h3>  
+
+        <div class="contact-item">  
+          <a href="mailto:b.jeferson.jefersom@gmail.com" class="contact-link email">  
+            <i class="fa-solid fa-envelope"></i>  
+            <span>Email</span>  
+          </a>  
+        </div>  
+
+        <div class="contact-item">  
+          <a href="https://wa.me/5547991383291" target="_blank" class="contact-link whatsapp">  
+            <i class="fa-brands fa-whatsapp"></i>  
+            <span>WhatsApp</span>  
+          </a>  
+        </div>  
+
+        <div class="contact-item">  
+          <a href="https://linkedin.com/in/seu_usuario" target="_blank" class="contact-link linkedin">  
+            <i class="fa-brands fa-linkedin"></i>  
+            <span>LinkedIn</span>  
+          </a>  
+        </div>  
+
+        <div class="contact-item">  
+          <a href="https://github.com/Jeferson29/jeferson.github.io" target="_blank" class="contact-link github">  
+            <i class="fa-brands fa-github"></i>  
+            <span>GitHub</span>  
+          </a>  
+        </div>  
+      </div> 
+      
+      <form id="contactForm" class="contact-form" novalidate>
+       <h3>Envie uma mensagem</h3>
+
+       <label for="name" class="sr-only">Nome</label>
+       <input type="text" id="name"  name="name" placeholder="Seu nome aqui *" autocomplete="name" required>
+
+       <label for="email" class="sr-only">Email</label>
+       <input type="email" id="email"
+name="email" placeholder="exemplo@email.com *" autocomplete="email" required>
+
+       <label for="message" class="sr-only">Mensagem</label>
+       <textarea id="message" name="message" placeholder="Sua mensagem aqui *" required></textarea>
+      
+      <button id="submitBtn" type="submit">Enviar</button>
+      
+      <p class="form-status"></p>
+     </form>
+
+    </div> 
+
+    <footer class="footer">  
+     <div class="footer-socials">  
+      <a href="mailto:b.jeferson.jeferson@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>  
+      <a href="https://wa.me/5547991383291" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>  
+      <a href="https://linkedin.com/in/seu_usuario" target="_blank"><i class="fa-brands fa-linkedin"></i></a>  
+      <a href="https://github.com/Jeferson29/jeferson.github.io" target="_blank"><i class="fa-brands fa-github"></i></a>  
+     </div>  
+     
+    <p>© 2025 Jeferson Barbosa dos Santos — Todos os direitos reservados.</p>  
+    </footer>  
+
+  </div>  
+
+  </section>
+    
+    </div>
+    
+    <div id="themeSwitcher" aria-label="Seletor de temas">
+    <button id="themeToggle" aria-label="Abrir temas">
+    🎨
+    </button>
+
+   <div id="themePanel">
+    <h4>Temas</h4>
+
+    <button onclick="setTheme('theme-cyber')" class="theme-option cyber">
+      <span></span> Cyber Dark
+    </button>
+
+    <button onclick="setTheme('theme-dracula')" class="theme-option dracula">
+      <span></span> Dracula
+    </button>
+
+    <button onclick="setTheme('theme-matrix')" class="theme-option matrix">
+      <span></span> Matrix
+    </button>
+   </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="assets/js/navigation.js" defer></script>    
+  <script src="assets/js/theme-lab.js" defer></script>
+  <script src="assets/js/linesAnimation.js" defer></script>
+  <script src="assets/js/skills-reveal.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
   
-  <script src="js/navigation.js" defer></script>
-  <script src="js/typewritter.js" defer></script>
-  <script src="js/carousel.js" defer></script>
-</body>
+</body>  
 </html>
