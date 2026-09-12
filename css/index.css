@@ -766,8 +766,6 @@ header {
 }
 .footer-socials {
   display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
   gap: 10px !important;
   margin-bottom: 20px;
 }
