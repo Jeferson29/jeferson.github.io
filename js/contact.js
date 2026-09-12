@@ -33,10 +33,16 @@ form.addEventListener("submit", function (e) {
     statusMsg.className = "form-status success";
     form.reset();
   })
-  .catch(() => {
+  /*.catch(() => {
     statusMsg.textContent = "Erro ao enviar. Tente novamente.";
     statusMsg.className = "form-status error";
+  })*/
+  .catch((error) => {
+    // Exibe a mensagem de erro da API direto na tela do celular
+    statusMsg.textContent = "Erro: " + (error.text || JSON.stringify(error));
+    statusMsg.className = "form-status error";
   })
+
   .finally(() => {
     submitBtn.disabled = false;
     submitBtn.textContent = "Enviar";
