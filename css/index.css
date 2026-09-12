@@ -765,32 +765,30 @@ header {
   margin-top: 12px;
 }
 .footer-socials {
-  display: flex !important;
-  gap: 10px !important;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  galign-items: center;
 }
-
 .footer-socials a {
-  width: 200px; /* Largura da barra */
-  height: 40px;
-  border-radius: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Espaço entre o ícone e o texto */
   color: var(--primary);
   border: 1px solid rgba(var(--neon-glow), 0.35);
   background: transparent;
+  font-size: 1.1em;
+  transition: 0.3s ease;
   text-decoration: none;
 }
-
 .footer-socials a:hover {
   background: var(--primary);
   color: var(--bg-main);
   box-shadow: 0 0 12px var(--primary);
   transform: translateY(-2px);
 }
-
 #themeSwitcher {
   position: fixed;
   bottom: 20px;
