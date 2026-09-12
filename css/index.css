@@ -768,24 +768,24 @@ header {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: center !important;
-  gap: 15px !important;
-  margin-bottom: 15px;
+  gap: 10px !important;
+  margin-bottom: 20px;
 }
+
 .footer-socials a {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 200px; /* Largura da barra */
+  height: 40px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px; /* Espaço entre o ícone e o texto */
   color: var(--primary);
   border: 1px solid rgba(var(--neon-glow), 0.35);
   background: transparent;
-  font-size: 1.1em;
-  transition: 0.3s ease;
   text-decoration: none;
 }
+
 .footer-socials a:hover {
   background: var(--primary);
   color: var(--bg-main);
