@@ -767,7 +767,7 @@ header {
 .footer-socials {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  galign-items: center;
 }
 .footer-socials a {
   width: 42px;
