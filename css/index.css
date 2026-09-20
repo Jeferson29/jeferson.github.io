@@ -579,9 +579,12 @@ header {
 }
 .project-img {
   width: 100%;
-  height: auto; /* A altura ajusta-se naturalmente sem forçar cortes */
-  display: block; /* Evita pequenos espaços fantasmas na base da imagem */
+  height: 220px; /* Bloqueia a altura para todos os cartões ficarem iguais */
+  object-fit: contain; /* Mostra 100% da imagem sem cortar e sem zoom gigante */
+  padding: 15px; /* Dá um respiro e cria o efeito de moldura */
+  background: rgba(255, 255, 255, 0.04); /* Fundo translúcido para disfarçar as barras laterais */
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
+  box-sizing: border-box; /* Impede que o padding aumente a largura do cartão */
 }
 .project-content {
   padding: 14px;
