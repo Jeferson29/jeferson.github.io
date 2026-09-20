@@ -579,9 +579,8 @@ header {
 }
 .project-img {
   width: 100%;
-  height: 200px; /* Mantém uma altura uniforme para todos os cartões */
-  object-fit: contain; /* Mostra a imagem original inteira sem cortar nada */
-  background: var(--bg-section); /* Usa a cor de fundo da secção para disfarçar os espaços vazios */
+  height: auto; /* A altura ajusta-se naturalmente sem forçar cortes */
+  display: block; /* Evita pequenos espaços fantasmas na base da imagem */
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
 }
 .project-content {
