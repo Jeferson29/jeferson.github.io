@@ -560,7 +560,7 @@ header {
   border-radius: 10px;
 }
 .project-card {
-  width: 85vw; /* Deixa a pontinha do próximo projeto visível */
+  width: 85vw; /* Deixa ver a ponta do cartão seguinte */
   max-width: 350px;
   flex-shrink: 0;
   background: var(--glass-bg);
@@ -571,7 +571,8 @@ header {
   transition: 0.35s ease;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Impede que a imagem vaze os cantos arredondados */
+  overflow: hidden;
+  height: max-content; /* 🚀 O truque mágico: impede o cartão de esticar e criar buracos vazios */
 }
 .project-card:hover {
   transform: translateY(-6px);
@@ -579,12 +580,10 @@ header {
 }
 .project-img {
   width: 100%;
-  height: 220px; /* Bloqueia a altura para todos os cartões ficarem iguais */
-  object-fit: contain; /* Mostra 100% da imagem sem cortar e sem zoom gigante */
-  padding: 15px; /* Dá um respiro e cria o efeito de moldura */
-  background: rgba(255, 255, 255, 0.04); /* Fundo translúcido para disfarçar as barras laterais */
+  aspect-ratio: 16 / 9; /* 🚀 Força uma moldura elegante e padronizada para todas as imagens */
+  object-fit: cover; 
+  object-position: top; /* Garante que vemos o cabeçalho/topo do seu projeto */
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
-  box-sizing: border-box; /* Impede que o padding aumente a largura do cartão */
 }
 .project-content {
   padding: 14px;
