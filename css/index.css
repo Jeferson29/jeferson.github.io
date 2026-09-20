@@ -748,6 +748,22 @@ header {
 .contact-form .form-status.error {
   color: #ff6b6b;
 }
+.contact-container .contact-form {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 15px !important;
+  margin: 0 auto !important;
+}
+.contact-container .contact-form input,
+.contact-container .contact-form textarea,
+.contact-container .contact-form button {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 /* FOOTER */
 .footer {
