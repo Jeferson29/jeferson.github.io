@@ -560,11 +560,9 @@ header {
   border-radius: 10px;
 }
 .project-card {
-  width: 100%;
-  flex: 0 0 100%;
+  width: 85vw; /* Deixa a pontinha do próximo projeto visível */
   max-width: 350px;
-  margin-right: 0;
-  min-height: unset;
+  flex-shrink: 0;
   background: var(--glass-bg);
   border: 1px solid rgba(var(--neon-glow), 0.35);
   border-radius: 14px;
@@ -573,7 +571,7 @@ header {
   transition: 0.35s ease;
   display: flex;
   flex-direction: column;
-  overflow: visible;
+  overflow: hidden; /* Impede que a imagem vaze os cantos arredondados */
 }
 .project-card:hover {
   transform: translateY(-6px);
@@ -581,15 +579,16 @@ header {
 }
 .project-img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
+  height: 220px; /* Mantém os cards alinhados e padronizados */
   object-fit: cover;
+  object-position: top; /* 🚀 Puxa a imagem para mostrar o topo do site */
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
 }
 .project-content {
   padding: 14px;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 .project-content h3 {
   color: var(--primary);
@@ -600,14 +599,14 @@ header {
   color: var(--text-muted);
   font-size: 0.9em;
   line-height: 1.4em;
-  flex: 1;
+  margin-bottom: 15px;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* 🔥 limita altura */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .project-tags {
-  margin: 10px 0;
+  margin-bottom: 15px;
 }
 .project-tags span {
   display: inline-block;
@@ -641,7 +640,7 @@ header {
   color: var(--bg-main);
   box-shadow: 0 0 12px var(--primary);
 }
-
+  
 /* CONTACT */
 .contact-container {
     padding: 20px;
