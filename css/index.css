@@ -12,11 +12,9 @@
   --sidenav-btn-size: 60px;
   --sidenav-radius: 14px;
   --sidenav-icon-size: 20px;
-
   /* Glass / neon */
   --sidenav-shadow: 0 0 14px rgba(0, 243, 255, 0.35);
   --sidenav-blur: 4px;
-
   /* Animation */
   --neon-pulse-time: 3s;
   --neon-glow: 0, 243, 255;
@@ -24,12 +22,11 @@
   --btnhome-bg-hover: rgba(0, 255, 255, 0.20);
   --btnhome-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
   --btnhome-shadow-hover: 0 0 22px rgba(0, 255, 255, 0.7);
-  
   /* About side */
   --about-side-bg: rgba(0, 255, 255, 0.03);
   --about-side-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
   /* Transição */
-    --transition-fast: 0.3s ease;
+  --transition-fast: 0.3s ease;
 }
 
 *{ padding: 0; margin: 0; }
@@ -563,17 +560,16 @@ header {
   border-radius: 10px;
 }
 .project-card {
-  width: 80vw;
-  min-width: calc(100% - 32px);
-  margin-right: 16px;
-  /*min-width: 80%;*/
-  flex-shrink: 0;
+  width: 100%;
+  flex: 0 0 100%;
+  max-width: 350px;
+  margin-right: 0;
   min-height: unset;
   background: var(--glass-bg);
   border: 1px solid rgba(var(--neon-glow), 0.35);
   border-radius: 14px;
   box-shadow: var(--shadow-neon);
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   transition: 0.35s ease;
   display: flex;
   flex-direction: column;
@@ -585,7 +581,8 @@ header {
 }
 .project-img {
   width: 100%;
-  height: 220px;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
 }
@@ -697,7 +694,7 @@ header {
 }
 .contact-form input,
 .contact-form textarea {
-    width: 90%;
+    width: 100%;
     padding: 12px;
     border-radius: 10px;
     border: 1px solid rgba(var(--neon-glow), 0.35);
@@ -767,7 +764,7 @@ header {
 .footer-socials {
   display: flex;
   justify-content: center;
-  galign-items: center;
+  gap: 16px;
 }
 .footer-socials a {
   width: 42px;
@@ -789,6 +786,7 @@ header {
   box-shadow: 0 0 12px var(--primary);
   transform: translateY(-2px);
 }
+
 #themeSwitcher {
   position: fixed;
   bottom: 20px;
