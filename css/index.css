@@ -527,7 +527,7 @@ header {
   }
 }
 
-/* PROJETOS */
+/* PROJETOS 
 .projects-container {
   width: 90%;
   max-width: 1000px;
@@ -556,7 +556,7 @@ header {
   padding: 20px 5px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  align-items: flex-start; /* Garante que os cartões não esticam para imitar a altura uns dos outros */
+  align-items: flex-start; /* Garante que os cartões não esticam para imitar a altura uns dos outros 
 }
 
 .projects-carousel::-webkit-scrollbar { 
@@ -571,7 +571,7 @@ header {
 .project-card {
   width: 85vw;
   max-width: 350px;
-  flex: 0 0 auto; /* Obriga o carrossel a respeitar a largura exata sem esmagar o cartão */
+  flex: 0 0 auto; /* Obriga o carrossel a respeitar a largura exata sem esmagar o cartão 
   background: var(--glass-bg);
   border: 1px solid rgba(var(--neon-glow), 0.35);
   border-radius: 14px;
@@ -589,7 +589,7 @@ header {
 
 .project-img {
   width: 100%;
-  height: auto; /* A imagem dita a sua própria altura, exibindo 100% do conteúdo sem zoom */
+  height: auto; /* A imagem dita a sua própria altura, exibindo 100% do conteúdo sem zoom 
   display: block;
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
 }
@@ -636,6 +636,120 @@ header {
   display: flex;
   gap: 10px;
   margin-top: auto;
+}
+
+.project-btns a {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.85em;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  background: transparent;
+  transition: 0.3s ease;
+}
+
+.project-btns a:hover {
+  background: var(--primary);
+  color: var(--bg-main);
+  box-shadow: 0 0 12px var(--primary);
+}*/
+
+/* 1. O CARROSSEL: Obriga todos os cartões a esticarem para terem a mesma altura */
+.projects-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 20px 5px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  align-items: stretch; /* Nivelamento automático */
+}
+
+.projects-carousel::-webkit-scrollbar { height: 6px; }
+.projects-carousel::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* 2. O CARTÃO: Estrutura flexível para empurrar o conteúdo */
+.project-card {
+  width: 85vw;
+  max-width: 350px;
+  flex: 0 0 auto;
+  background: var(--glass-bg);
+  border: 1px solid rgba(var(--neon-glow), 0.35);
+  border-radius: 14px;
+  box-shadow: var(--shadow-neon);
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: auto;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 22px rgba(var(--neon-glow), 0.7);
+}
+
+/* 3. A IMAGEM: Caixa fixa com proporção segura e fundo para as diferenças de tamanho */
+.project-img {
+  width: 100%;
+  height: 220px; 
+  object-fit: contain; /* Exibe 100% da imagem sem cortar */
+  object-position: top center;
+  background: rgba(0, 0, 0, 0.25); /* Fundo escuro para preencher os espaços das imagens finas/largas */
+  border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
+}
+
+/* 4. O CONTEÚDO: Cresce automaticamente para preencher buracos */
+.project-content {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ocupa o espaço livre e empurra os botões para baixo */
+}
+
+.project-content h3 {
+  color: var(--primary);
+  font-size: 1.15em;
+  margin-bottom: 6px;
+}
+
+.project-content p {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  line-height: 1.4em;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-tags {
+  margin-bottom: 15px;
+}
+
+.project-tags span {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 0.75em;
+  border-radius: 6px;
+  color: var(--primary);
+  border: 1px solid rgba(var(--neon-glow), 0.35);
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+/* 5. OS BOTÕES: Colados ao fundo */
+.project-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Cola os botões no rodapé do cartão */
 }
 
 .project-btns a {
