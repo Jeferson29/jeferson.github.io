@@ -536,16 +536,19 @@ header {
   text-align: center;
   color: var(--text-main);
 }
+
 .projects-container h2 {
   color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
+
 .projects-container .desc {
   color: var(--text-muted);
   margin-bottom: 25px;
 }
+
 .projects-carousel {
   display: flex;
   gap: 16px;
@@ -553,49 +556,56 @@ header {
   padding: 20px 5px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  align-items: flex-start; /* 🚀 Esta é a regra mágica que resolve o buraco gigante */
+  align-items: flex-start; /* Garante que os cartões não esticam para imitar a altura uns dos outros */
 }
-.projects-carousel::-webkit-scrollbar { height: 6px; }
+
+.projects-carousel::-webkit-scrollbar { 
+  height: 6px; 
+}
+
 .projects-carousel::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 10px;
 }
+
 .project-card {
-  width: 85vw; /* Deixa a pontinha do próximo projeto visível */
+  width: 85vw;
   max-width: 350px;
-  flex-shrink: 0;
+  flex: 0 0 auto; /* Obriga o carrossel a respeitar a largura exata sem esmagar o cartão */
   background: var(--glass-bg);
   border: 1px solid rgba(var(--neon-glow), 0.35);
   border-radius: 14px;
   box-shadow: var(--shadow-neon);
   scroll-snap-align: center;
-  transition: 0.35s ease;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: auto; 
 }
+
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 22px rgba(var(--neon-glow), 0.7);
 }
+
 .project-img {
   width: 100%;
-  height: auto; 
-  display: block; 
+  height: auto; /* A imagem dita a sua própria altura, exibindo 100% do conteúdo sem zoom */
+  display: block;
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
 }
+
 .project-content {
   padding: 14px;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
+
 .project-content h3 {
   color: var(--primary);
   font-size: 1.15em;
   margin-bottom: 6px;
 }
+
 .project-content p {
   color: var(--text-muted);
   font-size: 0.9em;
@@ -606,9 +616,11 @@ header {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .project-tags {
   margin-bottom: 15px;
 }
+
 .project-tags span {
   display: inline-block;
   padding: 4px 8px;
@@ -619,11 +631,13 @@ header {
   margin-right: 6px;
   margin-bottom: 6px;
 }
+
 .project-btns {
   display: flex;
   gap: 10px;
   margin-top: auto;
 }
+
 .project-btns a {
   flex: 1;
   text-align: center;
@@ -636,12 +650,13 @@ header {
   background: transparent;
   transition: 0.3s ease;
 }
+
 .project-btns a:hover {
   background: var(--primary);
   color: var(--bg-main);
   box-shadow: 0 0 12px var(--primary);
 }
-  
+
 /* CONTACT */
 .contact-container {
     padding: 20px;
