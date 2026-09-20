@@ -553,6 +553,7 @@ header {
   padding: 20px 5px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  align-items: flex-start; /* 🚀 Esta é a regra mágica que resolve o buraco gigante */
 }
 .projects-carousel::-webkit-scrollbar { height: 6px; }
 .projects-carousel::-webkit-scrollbar-thumb {
@@ -560,7 +561,7 @@ header {
   border-radius: 10px;
 }
 .project-card {
-  width: 85vw; /* Deixa ver a ponta do cartão seguinte */
+  width: 85vw; /* Deixa a pontinha do próximo projeto visível */
   max-width: 350px;
   flex-shrink: 0;
   background: var(--glass-bg);
@@ -572,7 +573,7 @@ header {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: max-content; /* 🚀 O truque mágico: impede o cartão de esticar e criar buracos vazios */
+  height: auto; 
 }
 .project-card:hover {
   transform: translateY(-6px);
@@ -580,9 +581,8 @@ header {
 }
 .project-img {
   width: 100%;
-  aspect-ratio: 16 / 9; /* 🚀 Força uma moldura elegante e padronizada para todas as imagens */
-  object-fit: cover; 
-  object-position: top; /* Garante que vemos o cabeçalho/topo do seu projeto */
+  height: auto; 
+  display: block; 
   border-bottom: 1px solid rgba(var(--neon-glow), 0.35);
 }
 .project-content {
