@@ -16,41 +16,24 @@ Tenho experiência tanto no Frontend quanto no Backend, e estou sempre aprimoran
 
 ---
 
-🛠️ Tecnologias e Ferramentas
+### 🛠️ Tecnologias e Ferramentas
 
-Frontend
+**Front-end**
+* HTML5, CSS3 e JavaScript (ES6+)
+* React
+* Design de UI e Responsividade (Glassmorphism e SVG)
+* Bootstrap e jQuery
 
-HTML5
+**Back-end e Dados**
+* Node.js e PHP
+* MySQL (Gestão de Base de Dados Relacional)
+* Consumo e Criação de APIs
+* Automações (Desenvolvimento de Bots)
 
-CSS3
-
-JavaScript (ES6+)
-
-Bootstrap
-
-jQuery
-
-Design Responsivo
-
-
-Backend
-
-PHP
-
-Lógica de Programação
-
-Integração Frontend/Backend
-
-
-Outros
-
-Git & GitHub
-
-GitHub Pages
-
-Organização de projetos
-
-Boas práticas de código
+**Ferramentas e Outros**
+* Git e GitHub
+* Lógica de Programação e *Clean Code*
+* Inglês Técnico
 
 
 
