@@ -87,7 +87,7 @@ Boas práticas de código
 
 🔗 GitHub Pages:
 
-> (adicione aqui o link quando publicar)
+> https://jeferson29.github.io/jeferson.github.io/
 
 
 
